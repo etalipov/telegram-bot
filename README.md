@@ -1,1 +1,1 @@
-Тестовый телеграм бот
+Example telegram box
