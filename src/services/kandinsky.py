@@ -2,7 +2,8 @@ import json
 import requests
 from time import sleep
 from base64 import b64decode
-from os import environ
+
+import mysecrets
 
 
 class Text2ImageAPI:
@@ -68,9 +69,7 @@ class Text2ImageAPI:
 
 
 def generate_image(query: str) -> bool:
-    api = Text2ImageAPI(
-        environ.get("KANDINSKIY_API_KEY"), environ.get("KANDINSKIY_SECRET_KEY")
-    )
+    api = Text2ImageAPI(mysecrets.KANDINSKIY_API_KEY, mysecrets.KANDINSKIY_SECRET_KEY)
     uuid = api.generate(query, api.get_model())
     images = api.check_generation(uuid)
 

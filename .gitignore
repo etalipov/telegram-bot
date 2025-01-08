@@ -1,3 +1,5 @@
 /.venv/
 /.vscode/
 Picture.png
+src/mysecrets.py
+__pycache__/

@@ -1,7 +1,7 @@
 from aiogram.filters.command import Command
 from aiogram import Router, F
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, Message, FSInputFile
-from app.kandinsky import generate_image
+from .kandinsky import generate_image
 
 history_context = []
 router = Router()
