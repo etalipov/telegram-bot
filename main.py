@@ -1,4 +1,4 @@
-form os import environ
+from os import environ
 
 
 print(environ.get("KANDINSKIY_API_KEY"))
