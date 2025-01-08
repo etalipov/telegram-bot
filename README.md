@@ -1,1 +1,1 @@
-Example telegram box
+Example telegram bot
