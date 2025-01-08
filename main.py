@@ -1,4 +1,2 @@
-from services.telegrambot import start_telegram_bot
-
-
-start_telegram_bot()
+print(secrets.KANDINSKIY_API_KEY)
+print(secrets.KANDINSKIY_SECRET_KEY)
