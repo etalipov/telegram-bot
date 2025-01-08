@@ -5,6 +5,9 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+env:
+  KANDINSKIY_API_KEY: ${{ secrets.KANDINSKIY_API_KEY }}
+  KANDINSKIY_SECRET_KEY: ${{ secrets.KANDINSKIY_SECRET_KEY }}
 
 jobs:
   build:
