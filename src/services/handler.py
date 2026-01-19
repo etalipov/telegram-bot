@@ -41,7 +41,7 @@ async def text_handler(message: Message) -> None:
 
         if previous_message == "Generate picture":
             await message.reply("In development")
-            
+
 
 def get_previous_message(context: list) -> str:
     if len(context) == 1:
