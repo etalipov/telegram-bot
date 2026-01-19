@@ -1,11 +1,11 @@
 import asyncio
 from aiogram import Bot, Dispatcher
-import mysecrets
+from os import environ
 from services import handler
 
 
 async def telegram_bot() -> None:
-    bot = Bot(mysecrets.TELEGRAM_BOT_TOKEN)
+    bot = Bot(environ["TELEGRAM_BOT_TOKEN"])
 
     dp = Dispatcher()
     dp.include_routers(handler.router)

@@ -1,7 +1,7 @@
 from aiogram.filters.command import Command
 from aiogram import Router, F
-from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, Message, FSInputFile
-from .kandinsky import generate_image
+from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, Message
+
 
 history_context = []
 router = Router()
@@ -40,17 +40,8 @@ async def text_handler(message: Message) -> None:
         previous_message = get_previous_message(history_context)
 
         if previous_message == "Generate picture":
-            await message.reply("Generating a picture :)\nMay take a couple of minutes")
-
-            result = generate_image(message.text)
-            if not result:
-                await message.reply("Couldn't get the picture :(")
-                return
-
-            photo_file = FSInputFile(path="Picture.png")
-
-            await message.reply_photo(photo_file, caption="Picture :)")
-
+            await message.reply("In development")
+            
 
 def get_previous_message(context: list) -> str:
     if len(context) == 1:
