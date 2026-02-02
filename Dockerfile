@@ -4,9 +4,14 @@ ENV PYTHONUNBUFFERED=1
 #   Using system python, without venv
 ENV UV_PROJECT_ENVIRONMENT="/usr/local/"    
 
+RUN apt-get update && \
+    apt-get install -y make --no-install-recommends && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 WORKDIR /opt/telegram-bot
 
-COPY pyproject.toml uv.lock ./
+COPY src/pyproject.toml src/uv.lock ./
     
 COPY --from=ghcr.io/astral-sh/uv:0.9.25 /uv /uvx /bin/
 

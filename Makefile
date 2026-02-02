@@ -1,14 +1,12 @@
-format_fix:
-	uv run ruff format .
+IMAGE_NAME := telegram-bot
+DOCKER_RUN := docker run --rm -v ./src/:/opt/telegram-bot ${IMAGE_NAME}
 
-lint_fix:
-	uv run ruff check . --fix
 
-lint_check:
-	uv run ruff check .
+build:
+	docker build --target=dev -t ${IMAGE_NAME} .
+	
+ruff_fix:
+	${DOCKER_RUN} make ruff_fix
 
-format_check:
-	uv run ruff format --check .
-
-types:
-	uv run mypy .
+mypy:
+	${DOCKER_RUN} make mypy
