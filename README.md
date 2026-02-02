@@ -41,7 +41,7 @@
 * `sudo ufw enable`
 
 ### 3. Docker setup:
-* Install docker https://docs.docker.com/engine/install/debian/
+* Install [Docker](https://docs.docker.com/engine/install/debian/) for Debian
 * `sudo usermod -aG docker my_cool_user `
 	
 
