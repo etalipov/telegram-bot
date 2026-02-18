@@ -21,6 +21,8 @@ RUN uv sync --locked --no-install-project
 
 COPY src ./
 
+USER 1001:1001
+
 CMD ["python", "main.py"]
 
 FROM draft AS release
@@ -28,5 +30,7 @@ FROM draft AS release
 RUN uv sync --locked --no-install-project --no-dev
 
 COPY src ./
+
+USER 1001:1001
 
 CMD ["python", "main.py"]
