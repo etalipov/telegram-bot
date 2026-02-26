@@ -1,7 +1,6 @@
+from aiogram import F, Router
 from aiogram.filters.command import Command
-from aiogram import Router, F
-from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, Message
-
+from aiogram.types import KeyboardButton, Message, ReplyKeyboardMarkup
 
 history_context = []
 router = Router()
@@ -21,9 +20,7 @@ def main_menu_markup() -> ReplyKeyboardMarkup:
 
 @router.message(Command("start"))
 async def start(message: Message) -> None:
-    await message.reply(
-        "Hello!\nWould you like a picture?", reply_markup=main_menu_markup()
-    )
+    await message.reply("Hello!\nWould you like a picture?", reply_markup=main_menu_markup())
 
 
 @router.message(F.text)

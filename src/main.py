@@ -1,6 +1,8 @@
 import asyncio
-from aiogram import Bot, Dispatcher
 from os import environ
+
+from aiogram import Bot, Dispatcher
+
 from services.handler import router
 
 
