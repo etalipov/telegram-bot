@@ -55,8 +55,8 @@ jobs:
             docker run -d \
               --name $APP_NAME \
               --restart unless-stopped \
-              --cpus: "0.1" \
-              --memory: 256m \
-              --memory_reservation: 128m \
+              --cpus "0.1" \
+              --memory 256m \
+              --memory_reservation 128m \
               -e TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN \
               $DOCKER_IMAGE
