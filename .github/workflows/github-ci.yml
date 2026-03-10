@@ -57,6 +57,6 @@ jobs:
               --restart unless-stopped \
               --cpus "0.1" \
               --memory 256m \
-              --memory_reservation 128m \
+              --memory-reservation 128m \
               -e TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN \
               $DOCKER_IMAGE
